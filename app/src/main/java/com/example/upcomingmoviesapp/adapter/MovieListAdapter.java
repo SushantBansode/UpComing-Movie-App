@@ -1,17 +1,20 @@
 package com.example.upcomingmoviesapp.adapter;
 
 import android.content.Context;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.upcomingmoviesapp.R;
 import com.example.upcomingmoviesapp.pojo.GetUpComingMovieResponse;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -72,13 +75,8 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
        {
            s1=s1+str.charAt(i);
        }
-       /* Glide.with(mContext).
-                load(s1)
-                .into(holder.item_movie_poster);
-*/
-
-        Picasso.with(mContext).
-                load(s1)
+       Glide.with(mContext).
+                load("https://image.tmdb.org/t/p/w500/"+s1)
                 .into(holder.item_movie_poster);
 
     }
